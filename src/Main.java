@@ -90,12 +90,19 @@ public class Main {
         System.out.println("Closing your application... \nThank you!");
             }
     private static void searchExpenses(ArrayList<Integer> arrayList) {
-    	 int leng = arrayList.size();
-         System.out.println("Enter the expense you need to search:\t");
-         //Complete the method
+    	Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the expense you need to search:\t");
+        int expense = sc.nextInt();
+        if(arrayList.contains(expense)) {
+        	System.out.println("Expense " + expense + " is found at: \n" );
+        	System.out.println("Index " + arrayList.indexOf(expense) + "\n");
+        }else {
+        	System.out.println("Expense not found \n");
+        }
     }
     private static void sortExpenses(ArrayList<Integer> arrayList) {
-    	int arrlength =  arrayList.size();
-        //Complete the method. The expenses should be sorted in ascending order.
+    	Collections.sort(arrayList);
+        System.out.println("Your sorted expensees are listed below: \n");
+        System.out.println(arrayList.toString() + "\n");
     }
 }
